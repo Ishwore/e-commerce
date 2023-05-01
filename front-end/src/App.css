@@ -23,37 +23,18 @@
   width: 100%;
   background-color: skyblue;
 }
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.inputBox{
+  margin: 25px;
+  padding: 7px;
+  width: 300px;
+  border: 1px solid skyblue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.appButton{
+  padding: 10px;
+  width: 150px;
+  background-color: skyblue;
+  border: 1px solid;
+  cursor: pointer;
 }
