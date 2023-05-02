@@ -8,6 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({extended:false}));
+//registern new user
 app.post('/registers', async (req, res) => {
   try {
       const user= await User.create(req.body);
@@ -19,6 +20,25 @@ app.post('/registers', async (req, res) => {
 
   }
   // console.log(req.body);
+  // res.send(req.body);
+})
+
+//login user
+app.post('/login', async (req, res) => {
+  try {
+      const user= await User.findOne(req.body).select("-password");
+      if(user){
+        res.status(200).json(user);
+      }else{
+        res.status(404).json({Error: 'User Not Found'});
+      }
+
+  } catch (error) {
+      console.log(error.message);
+      res.status(500).json({ message: error.message })
+
+  }
+  // //console.log(req.body);
   // res.send(req.body);
 })
 

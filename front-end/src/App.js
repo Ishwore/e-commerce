@@ -1,6 +1,6 @@
 
 import './App.css';
-//import './index.css';
+import './index.css';
 import Nav from './components/Nav';
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import Footer from './components/footer';
@@ -12,6 +12,7 @@ function App() {
       <BrowserRouter>
       <Nav/>
       <Routes>
+        
         <Route element = {<PrivateComponent/>}>
         <Route path='/' element={<h1>Product Listing Componet</h1>} />
         <Route path='/add' element={<h1>Product Add form</h1>} />
@@ -19,7 +20,7 @@ function App() {
         <Route path='/logout' element={<h1>User Logout</h1>} />
         <Route path='/profile' element={<h1>User Profile</h1>} />
         </Route>
-        
+
         <Route path='/signup' element={<SignUp/>} />
       </Routes>
       </BrowserRouter>
