@@ -16,6 +16,7 @@ const Nav = () => {
                     <li><Link to ="/add">Add Product </Link></li>
                     <li><Link to ="/update">Update Product </Link></li>
                     <li><Link to ="/profile">Profile </Link></li>
+                    <li><Link to ="/login">Login</Link> </li>
                     <li>{auth ? <Link onClick={logout} to ="/signup">Logout </Link>:
                      <Link to ="/signup">Register</Link> }</li>
 
