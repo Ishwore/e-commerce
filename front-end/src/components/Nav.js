@@ -9,17 +9,20 @@ const Nav = () => {
         navigate('/signup');
     }
     return (
-        <nav>
-            <div>
-                <ul className='nav-ul'>
+        <nav class =" bg-sky-500 h-10">
+            <div >
+                <ul class='inline-flex space-x-8 p-3'>
                     <li><Link to ="/">Products </Link></li>
                     <li><Link to ="/add">Add Product </Link></li>
                     <li><Link to ="/update">Update Product </Link></li>
                     <li><Link to ="/profile">Profile </Link></li>
-                    <li><Link to ="/login">Login</Link> </li>
-                    <li>{auth ? <Link onClick={logout} to ="/signup">Logout </Link>:
-                     <Link to ="/signup">Register</Link> }</li>
-
+                        {
+                            auth ? <li><Link onClick={logout} to ="/signup">Logout </Link></li>
+                            :<>
+                            <li><Link to ="/signup">SignUp</Link> </li>
+                           <li> <Link to ="/login">Login</Link> </li>
+                           </>
+                        }
                 </ul>
             </div>
         </nav>

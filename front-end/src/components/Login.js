@@ -1,13 +1,29 @@
 import React from 'react';
-
+import {useNavigate} from 'react-router-dom';
 
 const Login =() =>{
 
 
     const[email,setEmail] = React.useState('');
     const[password,setPassword] = React.useState('');
-    const handleLogin = () =>{
-        console.warn(email,password)
+    const navigate = useNavigate();
+    const handleLogin = async() =>{
+        console.warn("email,password",email,password);
+        const userLogin =  await fetch("http://localhost:5000/login",{
+            method :'post',
+            body:JSON.stringify({email,password}),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        const resultLogin = await userLogin.json();
+        console.warn(resultLogin);
+        if(resultLogin.name){
+            localStorage.setItem("user",JSON.stringify(resultLogin));
+            navigate("/");
+        }else{
+            alert("Please enter correct details");
+        }
     }
  return(
     <div class =" inline-grid  mt-20">
